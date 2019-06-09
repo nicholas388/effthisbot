@@ -17,6 +17,7 @@ def run_bot(reddit, subreddit_name):
 	for comment in reddit.subreddit(subreddit_name).comments(limit = 25):
 		lowercase_comment = comment.body.lower()
 		try:
+#fix not in lowercase_comment for 2, 3, 6
 			if "sassy lost child" in lowercase_comment and comment.id not in cache and comment.author != reddit.user.me():
 				print('String with "sassy lost child" found.' + comment.id)
 				comment.reply("I'm not a sassy lost child!")
@@ -28,7 +29,7 @@ def run_bot(reddit, subreddit_name):
 				print("Replied to comment" + comment.id)
 				cache.append(comment.id)
 			
-			if "brat" in lowercase_comment and comment.id not in cache and comment.author != reddit.user.me():
+			if "brat" in lowercase_comment and "spoilt brat" not in lowercase_comment and comment.id not in cache and comment.author != reddit.user.me():
 				print('String with "brat" found.' + comment.id)
 				comment.reply("Who do you think you are calling brat")
 				print("Replied to comment" + comment.id)
