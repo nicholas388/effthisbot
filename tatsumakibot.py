@@ -7,7 +7,7 @@ def authenticate():
 	print("Authenticating...")
 	reddit = praw.Reddit(
 						 'TatsuBot',
-						 user_agent="Tatsumaki comment responder v1.0")
+						 user_agent="Tatsumaki comment responder v1.1")
 	print("Authenticated as {}!".format(reddit.user.me()))
 	return reddit
 
@@ -23,7 +23,7 @@ def run_bot(reddit, subreddit_name):
 				print("Replied to comment" + comment.id)
 				cache.append(comment.id)
 	
-			if "tatsu" in lowercase_comment and comment.id not in cache and comment.author != reddit.user.me():
+			if "tatsu" in lowercase_comment and "tatsumaki" not in lowercase_comment and comment.id not in cache and comment.author != reddit.user.me():
 				comment.reply("It's Tatsumaki, not Tatsu you octopus!")
 				print("Replied to comment" + comment.id)
 				cache.append(comment.id)
@@ -46,7 +46,7 @@ def run_bot(reddit, subreddit_name):
 				print("Replied to comment" + comment.id)
 				cache.append(comment.id)
 
-			if "tats" in lowercase_comment and comment.id not in cache and comment.author != reddit.user.me():
+			if "tats" in lowercase_comment and "tatsumaki" not in lowercase_comment and comment.id not in cache and comment.author != reddit.user.me():
 				print('String with "tats" found.' + comment.id)
 				comment.reply("It's Tornado of Terror to you, avocado head!")
 				print("Replied to comment" + comment.id)
