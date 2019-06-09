@@ -42,7 +42,13 @@ def run_bot(reddit, subreddit_name):
 			
 			if "best girl" in lowercase_comment and comment.id not in cache and comment.author != reddit.user.me():
 				print('String with "best girl" found.' + comment.id)
-				comment.reply("Of course I am best girl! Not that I'd be into any of you...")
+				comment.reply("Of course I am best girl-no one compared to me!")
+				print("Replied to comment" + comment.id)
+				cache.append(comment.id)
+
+			if "tats" in lowercase_comment and comment.id not in cache and comment.author != reddit.user.me():
+				print('String with "tats" found.' + comment.id)
+				comment.reply("It's Tornado of Terror to you, avocado head!")
 				print("Replied to comment" + comment.id)
 				cache.append(comment.id)
 
