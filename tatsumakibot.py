@@ -23,7 +23,7 @@ def run_bot(reddit, subreddit_name):
 				print("Replied to comment" + comment.id)
 				cache.append(comment.id)
 	
-			if "Tatsu" in lowercase_comment and comment.id not in cache and comment.author != reddit.user.me():
+			if "tatsu" in lowercase_comment and comment.id not in cache and comment.author != reddit.user.me():
 				comment.reply("It's Tatsumaki, not Tatsu you octopus!")
 				print("Replied to comment" + comment.id)
 				cache.append(comment.id)
