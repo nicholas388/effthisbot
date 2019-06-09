@@ -55,7 +55,7 @@ def run_bot(reddit, subreddit_name):
 def main():
 	reddit = authenticate()
 	while True:
-		run_bot(reddit, "MemeTuesday")
+		run_bot(reddit, "OnePunchMan")
 #Sleep for 10 seconds
 		print("Sleeping for 10 seconds")
 		time.sleep(10)
