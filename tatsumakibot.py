@@ -14,7 +14,6 @@ def authenticate():
 
 def run_bot(reddit, subreddit_name):
 	print("Obtaining 25 comments...")
-	cache = []
 	for comment in reddit.subreddit(subreddit_name).comments(limit = 25):
 		lowercase_comment = comment.body.lower()
 		try:
@@ -52,11 +51,6 @@ def run_bot(reddit, subreddit_name):
 			time.sleep(20)
 			return False
 
-		except RateLimitExceeded as err:
-			print("RateLimitExceeded", err)
-			time.sleep(20)
-			return False
-
 
 def main():
 	reddit = authenticate()
@@ -71,5 +65,6 @@ print("About to run bot")
 
 
 if __name__ == "__main__":
+	cache = []
 	main()
 
