@@ -7,7 +7,7 @@ def authenticate():
 	print("Authenticating...")
 	reddit = praw.Reddit(
 						 'TatsuBot',
-						 user_agent="Tatsumaki comment responder v0.3")
+						 user_agent="Tatsumaki comment responder v1.0")
 	print("Authenticated as {}!".format(reddit.user.me()))
 	return reddit
 
