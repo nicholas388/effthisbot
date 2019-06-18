@@ -1,1 +1,1 @@
-worker: python tatsumakibot.py
+worker: python effthisbot.py
